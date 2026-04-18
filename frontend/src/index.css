@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lz-bg: #050508;
+  --color-lz-purple: #8A2BE2;
+  --color-lz-fuchsia: #D946EF;
+  --color-lz-orange: #FF6B00;
+  --color-lz-dark: #0A0A0F;
+  --color-lz-muted: #9CA3AF; /* Para textos secundarios */
+  --color-lz-border: rgba(255, 255, 255, 0.05); /* Para bordes sutiles */
+  --color-lz-white: #FFFFFF;
+  --color-lz-success: #22C55E;
+  --color-lz-success-light: #4ADE80;
+  --font-space: 'Space Grotesk', sans-serif;
+  --color-lz-border: rgba(255, 255, 255, 0.05); /* Para bordes sutiles */
+  --color-mac-close: #FF5F56;
+  --color-mac-min: #FFBD2E;
+  --color-mac-max: #27C93F;
+  --color-lz-glass: rgba(255, 255, 255, 0.03);
+  --color-lz-glass-hover: rgba(255, 255, 255, 0.08);
+}
+@keyframes gradient-xy {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-slow {
+  background-size: 200% 200%;
+  animation: gradient-xy 3s ease infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-lz-bg);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  /* El detalle Premium: Selección de texto personalizada */
+  ::selection {
+    background-color: var(--color-lz-purple); 
+    color: #ffffff;
+  }
+  ::-moz-selection {
+    background-color: var(--color-lz-purple);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-outline-purple {
+    -webkit-text-stroke: 1.5px var(--color-lz-purple);
+    color: transparent;
+  }
+  .text-outline-orange {
+    -webkit-text-stroke: 1.5px var(--color-lz-orange);
+    color: transparent;
+  }
+}
+
