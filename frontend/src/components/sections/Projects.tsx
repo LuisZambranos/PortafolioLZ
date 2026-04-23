@@ -14,7 +14,7 @@ const projectsData = [
     ],
     tech: ["React", "TypeScript", "Tailwind", "Firebase", "Vite"],
     gradient: "from-lz-purple to-lz-orange",
-    link: "https://ajstudio.vercel.app/",
+    link: "https://ajstudio.cl/",
     image: "/homeAJStudio.png" 
   },
   {
@@ -48,6 +48,22 @@ const projectsData = [
     gradient: "from-lz-fuchsia to-lz-purple",
     link: "https://fletesjez.vercel.app/",
     image: "/FletesJez.jpg" 
+  },
+    {
+    id: 4,
+    title: "Escuela Unión Latinoamericana",
+    category: "Gestión y Marketing Educacional",
+    challenge: "Digitalizar la gestión administrativa y potenciar la captación de alumnos mediante una plataforma moderna.",
+    solution: "Desarrollo de un sitio web robusto con sistema de postulaciones, catálogo de cursos y noticias de la escuela.",
+    impact: [
+      "Difusión de noticias del colegio.",
+      "Incremento del 40% en la visibilidad orgánica en buscadores.",
+      "Plataforma centralizada para comunicación con padres de familia."
+    ],
+    tech: ["React", "TypeScript", "Tailwind", "Sanity", "Vite"],
+    gradient: "from-red-600 to-pink-600",
+    link: "https://escuelaula.cl/",
+    image: "/escuelaula.png" 
   }
 ];
 
