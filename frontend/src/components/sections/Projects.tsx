@@ -64,6 +64,22 @@ const projectsData = [
     gradient: "from-red-600 to-pink-600",
     link: "https://escuelaula.cl/",
     image: "/escuelaula.png" 
+  },
+    {
+    id: 5,
+    title: "Forja",
+    category: "Aplicación de Gestión de Ejercicios",
+    challenge: "Crear una aplicación de gestión de ejercicios que permita a los usuarios crear rutinas de entrenamiento, llevar un seguimiento de sus progresos y compartir sus rutinas con otros usuarios.",
+    solution: "Desarrollo de una aplicación web con sistema de gestión de ejercicios, rutinas de entrenamiento y seguimiento de progresos.",
+    impact: [
+      "Mejora significativa en los tiempos de entrenamiento.",
+      "Mayor resultados en el progreso de los usuraios.",
+      "Historial y estadísticas de los entrenamientos para ver tus resultados."
+    ],
+    tech: ["React", "Vite", "TypeScript", "CSS", "Firebase"],
+    gradient: "from-red-600 to-pink-600",
+    link: "https://forja-cl.vercel.app/",
+    image: "/Forja.png" 
   }
 ];
 
