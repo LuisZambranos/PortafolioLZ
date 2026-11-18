@@ -1,8 +1,25 @@
 // Importamos el tipo 'Variants' para que TypeScript no se queje
+import { useEffect, useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { useSmoothScroll } from '../../hooks/useSmoothScroll';
 
+const name = 'Luis-Zambrano';
+const role = 'Ingeniero-Software';
+
 const Hero = () => {
+  // Efecto de escritura: primero el nombre, luego el rol; pausa y reinicia
+  const [count, setCount] = useState(0);
+  const total = name.length + role.length;
+
+  useEffect(() => {
+    const delay = count >= total ? 2500 : 90;
+    const timer = setTimeout(() => setCount(count >= total ? 0 : count + 1), delay);
+    return () => clearTimeout(timer);
+  }, [count, total]);
+
+  const typedName = name.slice(0, count);
+  const typedRole = count > name.length ? role.slice(0, count - name.length) : '';
+
   // Extraemos la función centralizada de nuestro Hook
   const { scrollToSection } = useSmoothScroll();
 
@@ -38,10 +55,33 @@ const Hero = () => {
       </motion.h1>
 
       <motion.div variants={itemVariants} className="mb-8">
-        <span className="inline-flex items-center gap-2 border border-lz-purple/30 bg-lz-purple/10 text-lz-purple font-semibold tracking-widest uppercase text-xs py-1.5 px-4 rounded-full">
-          <span className="w-2 h-2 rounded-full bg-lz-purple animate-pulse"></span>
-          Buscando oportunidades laborales
-        </span>
+        <div className="relative inline-block group">
+          {/* Resplandor degradado de fondo */}
+          <div className="absolute -inset-0.5 bg-linear-to-r from-lz-purple via-lz-fuchsia to-lz-orange rounded-lg blur-sm opacity-30 group-hover:opacity-60 transition duration-500"></div>
+
+          <div className="relative flex items-center gap-3 bg-lz-dark/90 border border-white/10 rounded-lg px-4 py-2.5 backdrop-blur-md select-none">
+            {/* Puntos estilo ventana */}
+            <div className="flex gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-mac-close"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-mac-min"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-mac-max"></span>
+            </div>
+
+            <div className="w-px h-4 bg-white/10"></div>
+
+            {/* Prompt con efecto de escritura */}
+            <div className="font-mono text-sm sm:text-base flex items-center min-w-68 sm:min-w-88">
+              <span className="text-lz-success-light font-bold">~</span>
+              <span className="text-lz-muted/60 mx-1.5">/</span>
+              <span className="text-lz-purple font-semibold">{typedName}</span>
+              {typedName.length === name.length && (
+                <span className="text-lz-muted/60 mx-1.5">/</span>
+              )}
+              <span className="text-lz-orange font-semibold">{typedRole}</span>
+              <span className="cursor-blink inline-block w-2 h-5 ml-1 rounded-xs bg-linear-to-b from-lz-fuchsia to-lz-orange"></span>
+            </div>
+          </div>
+        </div>
       </motion.div>
       
       <motion.div variants={itemVariants} className="max-w-md mb-10 mx-auto md:mx-0">

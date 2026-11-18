@@ -8,6 +8,7 @@ import cert3 from '../../assets/certificates/Diseño-ProgramacionWeb.png';
 import cert4 from '../../assets/certificates/FundamentosProgramacion-DiseñoWeb.png';
 import cert5 from '../../assets/certificates/Inmersion-Inteligencia-Artificial.png';
 import cert6 from '../../assets/certificates/PowerBI-IA.png';
+import cert7 from '../../assets/certificates/Python con IA.jpg';
 
 const certificates = [
   { id: 1, image: cert1, title: "Crecimiento Digital" },
@@ -15,7 +16,8 @@ const certificates = [
   { id: 3, image: cert3, title: "Diseño y Programación Web" },
   { id: 4, image: cert4, title: "Fundamentos de Programación" },
   { id: 5, image: cert5, title: "Inmersión en IA" },
-  { id: 6, image: cert6, title: "Power BI e Inteligencia Artificial" }
+  { id: 6, image: cert6, title: "Power BI e Inteligencia Artificial" },
+  { id: 7, image: cert7, title: "Python con IA" }
 ];
 
 const Certificates = () => {
